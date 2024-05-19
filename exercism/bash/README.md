@@ -6,7 +6,7 @@
 
 ### two fer
 
-[two-fer](./02-10/two-fer.sh) lesson has two main conditions, "" || filled strings and {input: true/false}
+[two-fer](./02-10/two_fer.sh) lesson has two main conditions, "" || filled strings and {input: true/false}
 we can either ways:
 
 * `if [[ ... ]]; then else fi`
@@ -16,7 +16,7 @@ we can either ways:
 ### Error handling
 
 catching errors and handling them is critical in coding!
-check the solution file [here](./02-10/error-handling.sh); the file has more info, check it out!
+check the solution file [here](./02-10/error_handling.sh); the file has more info, check it out!
 
 used concepts:
 

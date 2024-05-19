@@ -54,4 +54,24 @@ It unlocked One more concept:
 
 ## Poetry Club Door Policy
 
-Check its file [at](./00-12/PoetryClubDoorPlicy.js)
+This exercise had common array and string methods, Check its file [at](./00-12/PoetryClubDoorPlicy.js)
+
+## Elyses Enchantments
+
+This exercise had advanced array manipulation, Check its file [at](./00-12/ElysesEnchantments.js)
+
+## Vehicle Purchase
+
+This exercise had comparisons, Check its file [at](./00-12/VehiclePurchase.js)
+
+## Bird Watcher
+
+This exercise had looping, Check its file [at](./00-12/BirdWatcher.js)
+
+All these were in 2023
+
+---
+
+## mixed juices
+
+Check its file [at](./00-12/mixed-juices.js)
