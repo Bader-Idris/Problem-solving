@@ -29,4 +29,12 @@ Raindrops is a slightly more complex version of the FizzBuzz challenge, a classi
 
 > **instructions:** Your task is to convert a number into its corresponding raindrop sounds.
 
+my first solution was boring and full of iterations, second one is provided by chatGPT's bito.
+
 check its file [here](./02-10/raindrops.sh)
+
+There's a Youtube video by the instructors providing 14 ways to solving it, [check it here](https://www.youtube.com/watch?v=mwe-9RIV39Y)
+
+### Hamming
+
+check its file [here](./02-10/hamming.sh)
