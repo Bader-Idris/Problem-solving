@@ -99,4 +99,7 @@ export function parse(markdown) {
     return result;
   }
 }
-// boilerplate code
+// They said, this works and passes all tests, and my mission is to rewrite the code 🤯🤪
+// To make it better they say, is it because of the usage of recursive functioning!
+
+// I'll do it later, mission is difficult, because I see the code as beauty not bad and unreadable!

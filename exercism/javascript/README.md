@@ -186,12 +186,82 @@ For more documentary check [mdn for it](https://developer.mozilla.org/en-US/docs
 
 > **Second dozen!**
 
-## 13th Markdown
+## 13th Lucky Numbers
 
-level=medium
-check its file [**here**](./12-23/markdown.js)
+Some good info about type conversion:
 
-## 14th rectangles
+JavaScript does not have a **construct to cast into a (different) type** like many other languages but some built-in helpers can be used instead. Most notably, `Boolean`, `Number` and `String` can be used as functions to convert a value to the respective type.
+
+Important to notice between converting types, `String({ key: 'value' });` is the cause of `'[object Object]'` hatred response!
+and `String(undefined)` or with `null` will put them in quotes as `'undefined'`.
+
+**Type Coercion**.
+
+```yaml
+In certain contexts, JavaScript will automatically convert a value to another data type before it evaluates some statement. This implicit conversion is called type coercion.
+```
+
+numeric context in coercion has **Bitwise operators**: `|`, `&`, `^`, `~`
+
+> It turned out using if (!arg) is extremely useful!
+
+check its file [**here**](./12-23/lucky-numbers.js)
+
+## 14th Lasagna Master
+
+This was a good practice for functions, it's easy, but I put some effort in making its `JSDocs`
+check its file [**here**](./12-23/lasagna-master.js)
+
+## 15th Coordinate Transformation
+
+Professionally manipulating Fns especially because of using Closures, that I learned in 30day JS leetCode challenge, that I didn't finish yet at this moment! 🙂😅
+
+> **Closures are a programming pattern in JavaScript.**
+
+Closures basically allow outer functions to access nested function's set scope keys as variables, check this
+
+```js
+/**
+ * A function that returns a closure function that returns a greeting message.
+ * @returns {function(): string} A closure function that returns "Hello, Closures!"
+ */
+const usingClosures = () => () => "Hello, Closures!";
+usingClosures()()
+```
+
+check its file [**here**](./12-23/coordinate-transformation.js)
+
+This `// @ts-check` is useful to be added in the title of documented js files.
+
+> **Various IDEs interpret the @ts-check directive.**
+
+Remember that using closures is useful in hiding `private keys`!
+
+**Memoizing is sometimes used in dynamic programming. It allows for expensive operations to be done only once since their results are remembered.** I've seen that's it's been using a lot in frameworks as VueJs.
+
+> a useful multi-render coding [platform](programiz.com) brought from neetCode
+
+Js has a not-usually used array method, which is useful with `function composition`: `reduceRight` to get reversed reduce values!
+
+---
+
+
+
+
+
+
+
+
+
+
+---
+
+## 22th rectangles
 
 level=medium
 check its file [**here**](./12-23/rectangles.js)
+
+## 23th Markdown
+
+level=medium
+check its file [**here**](./12-23/markdown.js) ⚠️The mission is difficult, they want me to rewrite the code to make it more human readable, but I see it good, though I won't submit it and will make it later after **honing my skills**⚠️
