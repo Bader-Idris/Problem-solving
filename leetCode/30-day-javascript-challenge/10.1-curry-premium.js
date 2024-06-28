@@ -14,9 +14,29 @@ In practical terms, if you called the original function like `sum(1,2,3)`, you w
  * @return {Function}
  */
 function curry(fn) {
-  // ? declarative programming way
-  //! imperative programming
-  return function curried() {}
+  // our solution is expensive for infrastructure!
+  //? iterative solution
+  // let nums = [];
+  // return function curried(...args) {
+  //   nums = [...nums, ...args]; //! extremely expensive
+  //   if (fn.length === nums.length) {
+  //     const result = fn(...nums);
+  //     nums = [];// cleaning it up
+  //     return result;
+  //   }
+  //   else return curried;
+  // }
+
+  //? recursive solution
+  return function curried(...args) {
+    if (fn.length === args.length) {
+      return fn(...args);
+    } else {
+      return function(...newArguments) {
+        return curried(...args, ...newArguments)
+      }
+    }
+  }
 }
 
 /**

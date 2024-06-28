@@ -243,12 +243,115 @@ Remember that using closures is useful in hiding `private keys`!
 
 Js has a not-usually used array method, which is useful with `function composition`: `reduceRight` to get reversed reduce values!
 
+We call the returned function of `scale2d()` for instance a **`composed function`**
+
+## 16th Custom Signs
+
+This exercise's template string && ternary operators to learn they say; backticks `(``)` and question marks with semicolon  for ternary `? :`, `<truthyStatement> ? whenTrueDo : whenFalseDo`, this is an example of more than 2 conditions:
+
+```js
+let num = 10;
+let result = num > 0 ? "Positive" : num < 0 ? "Negative" : num === 0 ? "Zero" : "Not a number";
+console.log(result); // Output: Positive
+```
+
+multiple lines don't need `\n \t` or similar `escape sequences`, it's smart than by splitting the lines, it'll understand it:
+
+```js
+let templateString = `line 1
+line 2
+${variableYo}
+line4
+`
+```
+
+for ternary they said, this is tis syntax: `condition ? consequent-expression : alternative-expression`
+
+check its file [**here**](./12-23/custom-signs.js), easy!
+
+## 17th Fruit Picker
+
+Callback Fns are being used here!
+
+> the callback function must match the signature defined by the calling function.
+
+```js
+const squareLength = 5;
+// Caller function takes a callback function
+function applyToSquare(callback) {
+  return callback(squareLength);
+}
+//! Callback must expect the possible argument from the calling function
+function areaOfSquare(number) {
+  return number * number;
+}
+applyToSquare(areaOfSquare); // => 25
+```
+
+It was easy, compared to what I've involved myself into with express and its db connections and endpoints, 🤯💥
+check its file [**here**](./12-23/fruit-picker.js), easy!
+
+## 18th Elyses Destructured Enchantments
+
+They're providing `rest and spread` and array Destructuring in this lesson. 1st concept gets the indexes of provided array, as this
+
+```sh
+bun -e "console.log(...[1, 5, 'text'])" # this is the spread, and when in args it's called rest that makes the arg array dynamic
+# 1 5 text
+```
+
+check its file [**here**](./12-23/elyses-destructured-enchantments.js), very easy, I learned it with my first programming teacher, Osama Elzero, It was great after shortening a lot of boilerplate coding!
+
+## 19th Elyses Analytic Enchantments
+
+Its concept is arrow functions, with some useful higher order function concept and `Array Analysis`!
+
+Arrow Fns are very concise versions of Fns `() => {}`
+check its file [**here**](./12-23/elyses-analytic-enchantments.js)
+
+They're using `predicate`, `indexOf`, `forEach`, `includes` , `every`, `some`, `find`, `findIndex`.
+
+It's grateful in shortening some boolean array analyses!
+
+## 19th Windowing System
+
+It's main concept to explain is `Prototypes && Classes`
+JS added OOP in `ecma-script2015` version and even after having the keyword `class` in it, it's still a `prototype-based language`.
+
+Functions in JS are objects at the end, so they can have key/value pairs. `callable objects`, the 85th line with high-score-board challenge is rich and useful for doing this `object with classes` and advanced objects topic!
+
+There is an established convention that fields and methods that start with an underscore should be treated as private. They should never be accessed directly from outside the class.
+
+Private fields are sometimes accompanied by [getters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get) and [setters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set). keywords `get` and `set` you can define functions that are executed when a property with the same name as the function is accessed or assigned to.
+
+I'm copying this for its importance and requirements of revising:
+
+```js
+class Car {
+  constructor() {
+    this._milage = 0;
+  }
+
+  get milage() {
+    return this._milage;
+  }
+
+  set milage(value) {
+    throw new Error(`Milage cannot be manipulated, ${value} is ignored.`);
+    // Just an example, usually you would not provide a setter in this case.
+  }
+}
+
+const myCar = new Car();
+myCar.milage;
+// => 0
+myCar.milage = 100;
+// => Error: Milage cannot be manipulated, 100 is ignored.
+```
+
+check its file [**here**](./12-23/windowing-system.js)
+
 ---
-
-
-
-
-
 
 
 

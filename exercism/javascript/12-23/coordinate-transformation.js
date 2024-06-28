@@ -21,8 +21,8 @@ function translate2d(dx, dy) {
  * @param {number} sx the amount to scale the x component
  * @param {number} sy the amount to scale the y component
  *
- * @returns {function} a function which takes an x, y parameter, returns the
- *  scaled coordinate pair in the form [x, y]
+ * @returns {function} a composed function which takes an dx, dy parameter, returns the
+ *  scaled coordinate pair in the form [dx, dy]
  */
 function scale2d(sx, sy) {
   return (dx, dy) => [sx * dx, sy * dy]
@@ -40,22 +40,52 @@ function scale2d(sx, sy) {
  */
 function composeTransform(f, g) {
   return function (x, y) {
-    const [newX, newY] = f(x, y);
-    return g(newX, newY);
+    // const [newX, newY] = f(x, y);
+    // return g(newX, newY);
+    return g(...f(x, y));
   };
 }
+const moveCoordinatesRight2Px = translate2d(2, 0);
+const doubleCoordinates = scale2d(2, 2);
+const composedTransformations = composeTransform(
+  moveCoordinatesRight2Px,
+  doubleCoordinates,
+);
+const result = composedTransformations(0, 1);
+console.log(result);
+// result => [4, 2]
 
 /**
- * Return a function that memoizes the last result.  If the arguments are the same as the last call,
- * then memoized result returned.
+ * Return a function that memoizes the last result. If the arguments are the same as the last call
+ * and the cached value is the latest, the memoized result is returned.
  *
- * @param {function} f the transformation function to memoize, assumes takes two arguments 'x' and 'y'
- *
- * @returns {function} a function which takes x and y arguments, and will either return the saved result
- *  if the arguments are the same on subsequent calls, or compute a new result if they are different.
+ * @param {function} f - The transformation function to memoize, assumed to take multiple arguments.
+ * @returns {function} A function which takes the same arguments as `f` and will either return the saved result
+ * if the arguments are the same and the cache is the latest on subsequent calls, or compute a new result if they are different.
+ * The cache is managed to remove the oldest entries if it exceeds a certain limit.
  */
 function memoizeTransform(f) {
-  return () => {}
+  const cache = {};
+  const order = []; // To keep track of the order of keys
+  return function (...args) {
+    const key = JSON.stringify(args);
+    if (key in cache) {
+      // If the key is found and it is the latest one in the cache order
+      if (order[order.length - 1] === key) {
+        return cache[key];
+      }
+    }
+    // Update the cache and the order
+    cache[key] = f(...args);
+    order.push(key);
+    // If the order length exceeds a certain limit, clean up the oldest entries
+    if (order.length > 100) {
+      // Example limit, adjust as needed
+      const oldestKey = order.shift();
+      delete cache[oldestKey];
+    }
+    return cache[key];
+  };
 }
 
 export {

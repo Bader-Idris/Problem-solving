@@ -182,3 +182,21 @@ So, we'll be hash mapping any added result with objects!
 This appears that using JSON.stringify in Osama's 50 paid projects course, is tensely using this approach!
 
 10.1 is not freely available, check it for its useful `nesting functions`.
+
+In the editorial they say:
+
+Overview:
+
+Currying is a powerful technique in functional programming that transforms a function with multiple arguments into a sequence of functions. It allows you to create flexible and reusable code by enabling partial application of function arguments. In this article, we will discuss the concept and implementation of currying in JavaScript.
+
+some practical use cases include:
+
+Reusable utility functions: Currying can help create reusable utility functions that can be easily customized for specific use cases. Currying allows you to create a function that returns another function with a partially applied argument. In this case, we have a curried add function that takes two arguments, a and b. When you all add with a single argument, it returns a new function that takes the second argument b and adds it o the initially provided a.
+
+there are more 8 cases  premium only 💩, 2 solutions 1st is complicated 2nd is what we'll be solving!
+
+We can basically calculate `arg.length`.
+
+## personal tasks
+
+13th and 14th tasks need to be solved manually, because they're not included in the explaining videos!
